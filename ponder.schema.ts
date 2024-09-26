@@ -11,8 +11,8 @@ export default createSchema((p) => ({
     isHolderOfDark: p.boolean(),
     fuelCellBalance: p.bigint(),
     totalMintedFuelCell: p.bigint(),
-    wishwellId: p.string().references("WishWell.id"),
-    antigravityId: p.string().references("Antigravity.id"),
+    wishwellId: p.string().optional().references("WishWell.id"),
+    antigravityId: p.string().optional().references("Antigravity.id"),
 
     // relationships
     wishwell: p.one("wishwellId"),
