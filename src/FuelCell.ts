@@ -53,11 +53,11 @@ async function handleMintFuelCells({event,context}: Inputs): Promise<void> {
       isHolderOfDark: false,
       darkxbalance: 0n,
       darkBalance: 0n,
-      fuelCellBalance: 1n,
+      fuelCellBalance: quantity,
       totalMintedFuelCell: 0n,
     },
     update: ({current}) => ({
-      fuelCellBalance: current.fuelCellBalance + 1n
+      fuelCellBalance: current.fuelCellBalance + quantity
     })
   });
 
