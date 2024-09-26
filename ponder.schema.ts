@@ -101,11 +101,11 @@ export default createSchema((p) => ({
   FuelCellContract: p.createTable({
     id: p.string(),
     address: p.string(),
-    name: p.string().optional(),
-    symbol: p.string().optional(),
+    name: p.string(),
+    symbol: p.string(),
     baseUri: p.string(),
-    suffix: p.string().optional(),
-    totalSupply: p.bigint().optional(),
+    suffix: p.string(),
+    totalSupply: p.bigint(),
     totalBurned: p.bigint().optional(),
     mintedTokens: p.many("FuelCell.contractId")
   }),

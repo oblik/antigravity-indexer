@@ -697,13 +697,19 @@ export const FuelCellAbi = [
         "internalType": "address"
       },
       {
-        "name": "startTokenId",
+        "name": "journeyId",
         "type": "uint256",
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256"
       },
       {
-        "name": "quantity",
+        "name": "startTokenId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "lastTokenId",
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
