@@ -71,8 +71,8 @@ async function handleLotterResultAnnounced({event,context}: Inputs): Promise<voi
   await JackpotEntity.update({
     id: jackpotId,
     data: ({current}) => ({
-      currentJourneyId: journey,
-      currentLotteryId: lottery,
+      currentJourneyId: BigInt(journey),
+      currentLotteryId: BigInt(lottery),
       totalPayedOut: current.totalPayedOut + payout
     })
   });
