@@ -14,18 +14,18 @@ import { EvilAddressAbi } from "./abis/EvilAddressAbi";
 import { TreasuryAbi } from "./abis/TreasuryAbi";
 import { JackpotAbi } from "./abis/JackpotAbi";
 
-const MINING_RIG_ADDRESS =  "0x8Dea737AE483153c69934ff8a5c7E3D448c2DB4C"
-const DARKX_ADDRESS =  "0xdE87E198D2A5d6894a03AfCb34876601A6dd226f"
-const ANTIGRAVITY_ADDRESS =  "0xe2150da9bCe4B63f89Ebf61cD3f89EB7f3fB3F05"
-const DARK_CLAIMS_ADDRESS =  "0x6b3099EfFF4dAE69e48240d88C141a7cfa793ae6"
-const DARK_ADDRESS =  "0x63F5a917dD86Ce6cF1C20BEb06bcf1c44fe4d1d3"
-const WISHWELL_ADDRESS =  "0xC8A96A9163C2D11e2002C589a5DC7Ee4267499e2"
-const FC_ADDRESS="0xF08b0e7cd2b68Cf4969acc2c2E37B0c870fC973b"
-const LCC_ADDRESS="0x7D6a4B2c4400D12C203d9a3c0D4F4220bc0108a3"
-const JPM_ADDRESS="0x0Ed0DAd2b0D0813Cc0060cD55061F0aacf10D9f4"
-const EVIL_ADDRESS="0x4fffddfc07b68968B262f7aF814E6cAc14C6a46e"
-const TREASURY_ADDRESS="0x0cFf76fcaC678a8a030C738e6080471a16eeD63F"
-const JACKPOT_ADDRESS="0x1d068C6D621C4493dE7308e31eA03C25E0e3E728"
+const MINING_RIG_ADDRESS=process.env.MINING_RIG_ADDRESS as string;
+const DARKX_ADDRESS=process.env.DARKX_ADDRESS as string;
+const ANTIGRAVITY_ADDRESS=process.env.ANTIGRAVITY_ADDRESS as string;
+const DARK_CLAIMS_ADDRESS=process.env.DARK_CLAIMS_ADDRESS as string;
+const DARK_ADDRESS=process.env.DARK_ADDRESS as string;
+const WISHWELL_ADDRESS=process.env.WISHWELL_ADDRESS as string;
+const FC_ADDRESS=process.env.FC_ADDRESS as string;
+const LCC_ADDRESS=process.env.LCC_ADDRESS as string;
+const JPM_ADDRESS=process.env.JPM_ADDRESS as string;
+const EVIL_ADDRESS=process.env.EVIL_ADDRESS as string;
+const TREASURY_ADDRESS=process.env.TREASURY_ADDRESS as string;
+const JACKPOT_ADDRESS=process.env.JACKPOT_ADDRESS as string;
 
 const blockInterval = parseInt(process.env.BLOCK_INTERVAL as string);
 
