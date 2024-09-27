@@ -43,7 +43,7 @@ export default createConfig({
   blocks: {
     JourneyUpdateOnInterval: {
       network: process.env.NETWORK as "baseSepolia" | "sepolia",
-      startBlock: parseInt(process.env.START_BLOCK_ERA3 as string),
+      startBlock: parseInt(process.env.LATEST_BLOCK as string),
       interval: blockInterval
     },
   },

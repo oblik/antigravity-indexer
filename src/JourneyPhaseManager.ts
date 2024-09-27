@@ -10,7 +10,7 @@ ponder.on("JourneyPhaseManager:Unpaused", handleUnpaused);
 
 ponder.on("JourneyPhaseManager:Initialized", handleInitialized);
 
-// ponder.on("JourneyUpdateOnInterval:block", handleJourneyBlock);
+ponder.on("JourneyUpdateOnInterval:block", handleJourneyBlock);
 
 async function handleJourneyBlock({event,context}: Inputs): Promise<void> {
   const { block } = event;
