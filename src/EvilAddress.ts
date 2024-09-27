@@ -42,7 +42,7 @@ async function handleEvilMintExecuted({event,context}: Inputs): Promise<void> {
   });
 
   // create evil mint entity
-  const evilMintId = generateEvilMintId(contracts.EvilAddress.address, journey, event.transaction.hash, BigInt(event.log.logIndex));
+  const evilMintId = generateEvilMintId(contracts.EvilAddress.address, journey, event.log.transactionHash, BigInt(log.logIndex));
   await EvilMintEntity.create({
     id: evilMintId,
     data: {
@@ -51,7 +51,7 @@ async function handleEvilMintExecuted({event,context}: Inputs): Promise<void> {
       evilId: evilId,
       blockNumber: event.block.number,
       timestamp: event.block.timestamp,
-      transactionHash: event.transaction.hash
+      transactionHash: event.log.transactionHash
     }
   });
 }
@@ -77,12 +77,18 @@ async function handleEvilPruned({event,context}: Inputs): Promise<void> {
     data: {
       recentPruneTimestamp: block.timestamp,
       recentPruneBlockNumber: block.number,
-      recentPruneTransactionHash: transaction.hash
+      recentPruneTransactionHash: log.transactionHash
     }
   });
 }
 
 async function handleInitialized({event,context}: Inputs): Promise<void> {
+  console.log(`Calling Handle Initialized for Evil`);
+  console.log(`Calling Handle Initialized for Evil`);
+  console.log(`Calling Handle Initialized for Evil`);
+  console.log(`Calling Handle Initialized for Evil`);
+  console.log(`Calling Handle Initialized for Evil`);
+  console.log(`Calling Handle Initialized for Evil`);
   const { args, log, block, transaction } = event;
   const { db, network, client, contracts } = context;
   const {
