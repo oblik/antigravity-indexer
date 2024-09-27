@@ -137,12 +137,13 @@ export default createSchema((p) => ({
     contractId: p.string().references("FuelCellContract.id"),
     mintBatchId: p.string().references("Mint.id"),
     isUnwrapped: p.boolean(),
-    // winningsPruned: [WinningPruned!] @derivedFrom(field: "fuelCell"),
+    winningId: p.string().optional().references("WinningPruned.id"),
     mintBatch: p.one("mintBatchId"),
     transfers: p.many("Transfer.tokenId"),
     contract: p.one("contractId"),
     owner: p.one("ownerId"),
-    minter: p.one("minterId")
+    minter: p.one("minterId"),
+    winning: p.one("winningId")
   }),
   Jackpot: p.createTable({
     id: p.string(),
@@ -152,8 +153,8 @@ export default createSchema((p) => ({
     currentJourneyId: p.bigint(),
     totalPayedOut: p.bigint(),
     totalClaimed: p.bigint(),
-    // results: [LotteryResult!] @derivedFrom(field: "jackpot"),
-    // winnings: [WinningPruned!] @derivedFrom(field: "jackpot")
+    results: p.many("LotteryResult.jackpotId"),
+    winnings: p.many("WinningPruned.jackpotId")
   }),
   Treasury: p.createTable({
     id: p.string(),
@@ -161,11 +162,11 @@ export default createSchema((p) => ({
     recentYieldJourneyId: p.bigint(),
     totalYieldPayedOut: p.bigint(),
     totalYieldClaimed: p.bigint(),
-    // payouts: [YieldPayout!] @derivedFrom(field: "treasury")
+    payouts: p.many("YieldPayout.treasuryId")
   }),
   YieldPayout: p.createTable({
     id: p.string(),
-    // treasury: Treasury!,
+    treasuryId: p.string().references("Treasury.id"),
     journeyId: p.bigint(),
     givenIn: p.bigint(),
     yieldValue: p.bigint(),
@@ -174,10 +175,12 @@ export default createSchema((p) => ({
     blockNumber: p.bigint(),
     timestamp: p.bigint(),
     transactionHash: p.string(),
+
+    treasury: p.one("treasuryId")
   }),
   LotteryResult: p.createTable({
     id: p.string(),
-    // jackpot: Jackpot!,
+    jackpotId: p.string().references("Jackpot.id"),
     journeyId: p.bigint(),
     lotteryId: p.bigint(),
     numberOfWinners: p.bigint(),
@@ -188,17 +191,22 @@ export default createSchema((p) => ({
     blockNumber: p.bigint(),
     timestamp: p.bigint(),
     transactionHash: p.string(),
+
+    jackpot: p.one("jackpotId")
   }),
   WinningPruned: p.createTable({
     id: p.string(),
-    // jackpot: Jackpot!,
+    jackpotId: p.string().references("Jackpot.id"),
     journeyId: p.bigint(),
     lotteryId: p.bigint(),
-    // fuelCell: FuelCell!,
+    fuelCellId: p.string().references("FuelCell.id"),
     winningAmount: p.bigint(),
     blockNumber: p.bigint(),
     timestamp: p.bigint(),
     transactionHash: p.string(),
+
+    fuelCell: p.one("fuelCellId"),
+    jackpot: p.one("jackpotId")
   }),
   Transfer: p.createTable({
     id: p.string(),
@@ -240,6 +248,12 @@ export default createSchema((p) => ({
   JourneyPhaseManager: p.createTable({
     id: p.string(),
     address: p.string(),
+    currentJourneyId: p.bigint(),
+    currentPhaseId: p.bigint(),
+    nextJourneyId: p.bigint(),
+    nextPhaseId: p.bigint(),
+    nextJourneyStartTime: p.bigint(),
+    nextPhaseStartTime: p.bigint(),
     recentPauseStartTime: p.bigint(),
     totalPauseTime: p.bigint(),
     totalFuelCellsMinted: p.bigint(),

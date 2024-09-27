@@ -27,6 +27,8 @@ const EVIL_ADDRESS="0x4fffddfc07b68968B262f7aF814E6cAc14C6a46e"
 const TREASURY_ADDRESS="0x0cFf76fcaC678a8a030C738e6080471a16eeD63F"
 const JACKPOT_ADDRESS="0x1d068C6D621C4493dE7308e31eA03C25E0e3E728"
 
+const blockInterval = parseInt(process.env.BLOCK_INTERVAL as string);
+
 export default createConfig({
   networks: {
     sepolia: {
@@ -37,6 +39,13 @@ export default createConfig({
       chainId: 84532,
       transport: http(process.env.PONDER_BASE_SEPOLIA_URL)
     }
+  },
+  blocks: {
+    JourneyUpdateOnInterval: {
+      network: process.env.NETWORK as "baseSepolia" | "sepolia",
+      startBlock: parseInt(process.env.START_BLOCK_ERA3 as string),
+      interval: blockInterval
+    },
   },
   contracts: {
     MiningRig: {
