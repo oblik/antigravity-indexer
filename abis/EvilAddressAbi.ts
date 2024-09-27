@@ -1,615 +1,666 @@
 export const EvilAddressAbi = [
   {
-    type: "constructor",
-    inputs: [],
-    stateMutability: "nonpayable",
+    "type": "constructor",
+    "inputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: "receive",
-    stateMutability: "payable",
+    "type": "receive",
+    "stateMutability": "payable"
   },
   {
-    type: "function",
-    name: "DARK_DENOMINATION",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "DARK_DENOMINATION",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "HUNDRED_PERCENT",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "HUNDRED_PERCENT",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "STARTING_DARK_BALANCE",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "PER_TRX_MINT_LIMIT",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "acceptOwnership",
-    inputs: [],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "calculateNftsToMint",
-    inputs: [
+    "type": "function",
+    "name": "STARTING_DARK_BALANCE",
+    "inputs": [],
+    "outputs": [
       {
-        name: "currentJourney",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    outputs: [
-      {
-        name: "nftsToMint",
-        type: "uint64",
-        internalType: "uint64",
-      },
-    ],
-    stateMutability: "pure",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "dark",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "contract Dark",
-      },
-    ],
-    stateMutability: "view",
+    "type": "function",
+    "name": "acceptOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: "function",
-    name: "evilCall",
-    inputs: [
+    "type": "function",
+    "name": "calculateNftsToMint",
+    "inputs": [
       {
-        name: "to",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "value",
-        type: "uint256",
-        internalType: "uint256",
-      },
-      {
-        name: "data",
-        type: "bytes",
-        internalType: "bytes",
-      },
-      {
-        name: "txGas",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "currentJourney",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "success",
-        type: "bool",
-        internalType: "bool",
-      },
+        "name": "nftsToMint",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
     ],
-    stateMutability: "payable",
+    "stateMutability": "pure"
   },
   {
-    type: "function",
-    name: "evilMint",
-    inputs: [],
-    outputs: [],
-    stateMutability: "nonpayable",
+    "type": "function",
+    "name": "dark",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract Dark"
+      }
+    ],
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "evilPrune",
-    inputs: [
+    "type": "function",
+    "name": "deprecated",
+    "inputs": [
       {
-        name: "_batchWinnings",
-        type: "tuple[][]",
-        internalType: "struct JackpotStorage.PruneWinning[][]",
-        components: [
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "evilCall",
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "data",
+        "type": "bytes",
+        "internalType": "bytes"
+      },
+      {
+        "name": "txGas",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "success",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "evilMint",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "evilPrune",
+    "inputs": [
+      {
+        "name": "_batchWinnings",
+        "type": "tuple[]",
+        "internalType": "struct JackpotStorage.PruneWinning[]",
+        "components": [
           {
-            name: "journeyId",
-            type: "uint16",
-            internalType: "uint16",
+            "name": "journeyId",
+            "type": "uint16",
+            "internalType": "uint16"
           },
           {
-            name: "lotteryId",
-            type: "uint16",
-            internalType: "uint16",
+            "name": "lotteryId",
+            "type": "uint16",
+            "internalType": "uint16"
           },
           {
-            name: "proofs",
-            type: "bytes32[]",
-            internalType: "bytes32[]",
+            "name": "tokenId",
+            "type": "uint256",
+            "internalType": "uint256"
           },
-        ],
-      },
-      {
-        name: "tokenIds",
-        type: "uint256[]",
-        internalType: "uint256[]",
-      },
+          {
+            "name": "proofs",
+            "type": "bytes32[]",
+            "internalType": "bytes32[]"
+          }
+        ]
+      }
     ],
-    outputs: [],
-    stateMutability: "nonpayable",
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: "function",
-    name: "initialize",
-    inputs: [
+    "type": "function",
+    "name": "initialize",
+    "inputs": [
       {
-        name: "_jpm",
-        type: "address",
-        internalType: "contract JourneyPhaseManager",
+        "name": "_jpm",
+        "type": "address",
+        "internalType": "contract JourneyPhaseManager"
       },
       {
-        name: "_lcc",
-        type: "address",
-        internalType: "contract LaunchControlCenter",
+        "name": "_lcc",
+        "type": "address",
+        "internalType": "contract LaunchControlCenter"
       },
       {
-        name: "_jackpot",
-        type: "address",
-        internalType: "contract Jackpot",
+        "name": "_jackpot",
+        "type": "address",
+        "internalType": "contract Jackpot"
       },
       {
-        name: "_dark",
-        type: "address",
-        internalType: "contract Dark",
+        "name": "_dark",
+        "type": "address",
+        "internalType": "contract Dark"
       },
       {
-        name: "_initialOwner",
-        type: "address",
-        internalType: "address",
-      },
+        "name": "_initialOwner",
+        "type": "address",
+        "internalType": "address"
+      }
     ],
-    outputs: [],
-    stateMutability: "nonpayable",
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: "function",
-    name: "jackpot",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "jackpot",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "contract Jackpot",
-      },
+        "name": "",
+        "type": "address",
+        "internalType": "contract Jackpot"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "jpm",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "jpm",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "contract JourneyPhaseManager",
-      },
+        "name": "",
+        "type": "address",
+        "internalType": "contract JourneyPhaseManager"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "lcc",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "lcc",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "contract LaunchControlCenter",
-      },
+        "name": "",
+        "type": "address",
+        "internalType": "contract LaunchControlCenter"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "mintedInJourney",
-    inputs: [
+    "type": "function",
+    "name": "mintedInJourney",
+    "inputs": [
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "journeyId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "bool",
-        internalType: "bool",
-      },
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "onERC1155BatchReceived",
-    inputs: [
+    "type": "function",
+    "name": "mintedTillNow",
+    "inputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "",
-        type: "uint256[]",
-        internalType: "uint256[]",
-      },
-      {
-        name: "",
-        type: "uint256[]",
-        internalType: "uint256[]",
-      },
-      {
-        name: "",
-        type: "bytes",
-        internalType: "bytes",
-      },
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "bytes4",
-        internalType: "bytes4",
-      },
+        "name": "",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
     ],
-    stateMutability: "nonpayable",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "onERC1155Received",
-    inputs: [
+    "type": "function",
+    "name": "onERC1155BatchReceived",
+    "inputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "address",
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: "",
-        type: "address",
-        internalType: "address",
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       },
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
       },
       {
-        name: "",
-        type: "bytes",
-        internalType: "bytes",
-      },
+        "name": "",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "bytes4",
-        internalType: "bytes4",
-      },
+        "name": "",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
     ],
-    stateMutability: "nonpayable",
+    "stateMutability": "nonpayable"
   },
   {
-    type: "function",
-    name: "onERC721Received",
-    inputs: [
+    "type": "function",
+    "name": "onERC1155Received",
+    "inputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "address",
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: "",
-        type: "address",
-        internalType: "address",
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        name: "",
-        type: "uint256",
-        internalType: "uint256",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        name: "",
-        type: "bytes",
-        internalType: "bytes",
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
       },
+      {
+        "name": "",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
     ],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "bytes4",
-        internalType: "bytes4",
-      },
+        "name": "",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
     ],
-    stateMutability: "nonpayable",
+    "stateMutability": "nonpayable"
   },
   {
-    type: "function",
-    name: "owner",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "onERC721Received",
+    "inputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "address",
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       },
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
     ],
-    stateMutability: "view",
-  },
-  {
-    type: "function",
-    name: "pendingOwner",
-    inputs: [],
-    outputs: [
+    "outputs": [
       {
-        name: "",
-        type: "address",
-        internalType: "address",
-      },
+        "name": "",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "nonpayable"
   },
   {
-    type: "function",
-    name: "proxiableUUID",
-    inputs: [],
-    outputs: [
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
       {
-        name: "",
-        type: "bytes32",
-        internalType: "bytes32",
-      },
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
     ],
-    stateMutability: "view",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "renounceOwnership",
-    inputs: [],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "transferOwnership",
-    inputs: [
+    "type": "function",
+    "name": "pendingOwner",
+    "inputs": [],
+    "outputs": [
       {
-        name: "newOwner",
-        type: "address",
-        internalType: "address",
-      },
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
     ],
-    outputs: [],
-    stateMutability: "nonpayable",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "upgradeTo",
-    inputs: [
+    "type": "function",
+    "name": "proxiableUUID",
+    "inputs": [],
+    "outputs": [
       {
-        name: "newImplementation",
-        type: "address",
-        internalType: "address",
-      },
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
     ],
-    outputs: [],
-    stateMutability: "nonpayable",
+    "stateMutability": "view"
   },
   {
-    type: "function",
-    name: "upgradeToAndCall",
-    inputs: [
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
       {
-        name: "newImplementation",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "data",
-        type: "bytes",
-        internalType: "bytes",
-      },
+        "name": "newOwner",
+        "type": "address",
+        "internalType": "address"
+      }
     ],
-    outputs: [],
-    stateMutability: "payable",
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: "event",
-    name: "AdminChanged",
-    inputs: [
+    "type": "function",
+    "name": "upgradeTo",
+    "inputs": [
       {
-        name: "previousAdmin",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
-      {
-        name: "newAdmin",
-        type: "address",
-        indexed: false,
-        internalType: "address",
-      },
+        "name": "newImplementation",
+        "type": "address",
+        "internalType": "address"
+      }
     ],
-    anonymous: false,
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    type: "event",
-    name: "BeaconUpgraded",
-    inputs: [
+    "type": "function",
+    "name": "upgradeToAndCall",
+    "inputs": [
       {
-        name: "beacon",
-        type: "address",
-        indexed: true,
-        internalType: "address",
+        "name": "newImplementation",
+        "type": "address",
+        "internalType": "address"
       },
+      {
+        "name": "data",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
     ],
-    anonymous: false,
+    "outputs": [],
+    "stateMutability": "payable"
   },
   {
-    type: "event",
-    name: "EvilMintExecuted",
-    inputs: [
+    "type": "event",
+    "name": "AdminChanged",
+    "inputs": [
       {
-        name: "journey",
-        type: "uint256",
-        indexed: false,
-        internalType: "uint256",
+        "name": "previousAdmin",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
       },
       {
-        name: "nftsMinted",
-        type: "uint64",
-        indexed: false,
-        internalType: "uint64",
-      },
+        "name": "newAdmin",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
     ],
-    anonymous: false,
+    "anonymous": false
   },
   {
-    type: "event",
-    name: "EvilPruned",
-    inputs: [],
-    anonymous: false,
-  },
-  {
-    type: "event",
-    name: "Initialized",
-    inputs: [
+    "type": "event",
+    "name": "BeaconUpgraded",
+    "inputs": [
       {
-        name: "version",
-        type: "uint8",
-        indexed: false,
-        internalType: "uint8",
-      },
+        "name": "beacon",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
     ],
-    anonymous: false,
+    "anonymous": false
   },
   {
-    type: "event",
-    name: "OwnershipTransferStarted",
-    inputs: [
+    "type": "event",
+    "name": "EvilMintExecuted",
+    "inputs": [
       {
-        name: "previousOwner",
-        type: "address",
-        indexed: true,
-        internalType: "address",
+        "name": "journey",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
       },
       {
-        name: "newOwner",
-        type: "address",
-        indexed: true,
-        internalType: "address",
-      },
+        "name": "nftsMinted",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
     ],
-    anonymous: false,
+    "anonymous": false
   },
   {
-    type: "event",
-    name: "OwnershipTransferred",
-    inputs: [
+    "type": "event",
+    "name": "EvilPruned",
+    "inputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Initialized",
+    "inputs": [
       {
-        name: "previousOwner",
-        type: "address",
-        indexed: true,
-        internalType: "address",
-      },
-      {
-        name: "newOwner",
-        type: "address",
-        indexed: true,
-        internalType: "address",
-      },
+        "name": "version",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "uint8"
+      }
     ],
-    anonymous: false,
+    "anonymous": false
   },
   {
-    type: "event",
-    name: "Upgraded",
-    inputs: [
+    "type": "event",
+    "name": "OwnershipTransferStarted",
+    "inputs": [
       {
-        name: "implementation",
-        type: "address",
-        indexed: true,
-        internalType: "address",
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
       },
-    ],
-    anonymous: false,
-  },
-  {
-    type: "error",
-    name: "AlreadyExcutedEvilPlanForTheJourney",
-    inputs: [
       {
-        name: "journeyId",
-        type: "uint256",
-        internalType: "uint256",
-      },
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
     ],
+    "anonymous": false
   },
   {
-    type: "error",
-    name: "EvilCallFailed",
-    inputs: [],
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
   },
   {
-    type: "error",
-    name: "ZeroDarkAddress",
-    inputs: [],
+    "type": "event",
+    "name": "Upgraded",
+    "inputs": [
+      {
+        "name": "implementation",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
   },
   {
-    type: "error",
-    name: "ZeroJPMAddress",
-    inputs: [],
+    "type": "error",
+    "name": "AlreadyExcutedEvilPlanForTheJourney",
+    "inputs": [
+      {
+        "name": "journeyId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
   },
   {
-    type: "error",
-    name: "ZeroJackpotAddress",
-    inputs: [],
+    "type": "error",
+    "name": "EvilCallFailed",
+    "inputs": []
   },
   {
-    type: "error",
-    name: "ZeroLCCAddress",
-    inputs: [],
+    "type": "error",
+    "name": "ZeroDarkAddress",
+    "inputs": []
   },
+  {
+    "type": "error",
+    "name": "ZeroJPMAddress",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ZeroJackpotAddress",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ZeroLCCAddress",
+    "inputs": []
+  }
 ] as const;
