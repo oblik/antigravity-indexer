@@ -98,14 +98,6 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
   const {User: UserEntity, DarkTransfer: DarkTransferEntity} = db;
   // treasury fee update
   const {from, to, amount} = args;
-  // create both users if don't exist
-  if(to == "0x1792dedc1A50849041C063BFB686b8350DF9CD73") {
-    console.log({
-      from,
-      to,
-      amount
-    });
-  }
 
   // if victim doesn't exist, create a new user
   const senderId = generateUserId(from);
@@ -155,7 +147,7 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
   });
   
   // create transfer entity
-  const transferId = generateDarkTransferEntityId(to, from, transaction.hash);
+  const transferId = generateDarkTransferEntityId(to, from, log.transactionHash);
   await DarkTransferEntity.create({
     id: transferId,
     data: {
@@ -164,7 +156,7 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
       amount: amount,
       blocknumber: block.number,
       timestamp: block.timestamp,
-      transactionHash: transaction.hash
+      transactionHash: log.transactionHash
     }
   });
 }

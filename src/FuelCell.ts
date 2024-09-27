@@ -114,16 +114,16 @@ async function handleMintFuelCells({event,context}: Inputs): Promise<void> {
   });
 
   // create Mint entity
-  let mintId = generateMintId(transaction.hash, to);
+  let mintId = generateMintId(log.transactionHash, to);
   await MintEntity.create({
     id: mintId,
     data: {
       userId: newOwnerId,
       journeyId: journeyId,
       amount: quantity,
-      blocknumber: event.block.number,
-      timestamp: event.block.timestamp,
-      transactionHash: event.transaction.hash,
+      blocknumber: block.number,
+      timestamp: block.timestamp,
+      transactionHash: log.transactionHash,
     }
   });
 
@@ -149,7 +149,7 @@ async function handleMintFuelCells({event,context}: Inputs): Promise<void> {
         journeyId: journeyId,
         mintTimestamp: block.timestamp,
         mintBlockNumber: block.number,
-        mintTransactionHash: transaction.hash,
+        mintTransactionHash: log.transactionHash,
         mintBatchId: mintId,
         isUnwrapped: false,
         uri: `${baseUri}/${fuelCellTokenId.toString()}${suffix}`,
@@ -163,13 +163,13 @@ async function handleMintFuelCells({event,context}: Inputs): Promise<void> {
     data: Array.from({length: parseInt(quantity.toString())}, (_, i) => {
       const fuelCellTokenId = startTokenId + BigInt(i);
       return {
-        id: generateTransferId( transaction.hash, fuelCellTokenId),
+        id: generateTransferId( log.transactionHash, fuelCellTokenId),
         tokenId: generateFuelCellId(contracts.FuelCell.address, fuelCellTokenId),
         fromId: previousOwnerId,
         toId: newOwnerId,
         timestamp: block.timestamp,
         block: block.number,
-        transactionHash: transaction.hash
+        transactionHash: log.transactionHash
       }
     })
   });
@@ -190,7 +190,7 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
   let newOwnerId = generateUserId(to);
   let previousOwnerId = generateUserId(from);
   let fuelCellId = generateFuelCellId(contracts.FuelCell.address, tokenId);
-  let transferId = generateTransferId(transaction.hash, tokenId);
+  let transferId = generateTransferId(log.transactionHash, tokenId);
 
   // create or update user to deduct the fuel cell transfer
   await UserEntity.upsert({
@@ -245,7 +245,7 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
       toId: newOwnerId,
       timestamp: block.timestamp,
       block: block.number,
-      transactionHash: transaction.hash,
+      transactionHash: log.transactionHash,
     }
   });
 }

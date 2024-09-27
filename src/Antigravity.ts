@@ -45,7 +45,7 @@ async function handleAntigravityTransfer({event,context}: Inputs): Promise<void>
       tokenId: id,
       blocknumber: block.number,
       timestamp: block.timestamp,
-      transactionHash: transaction.hash
+      transactionHash: log.transactionHash
     }
   });
 }

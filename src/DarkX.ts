@@ -53,7 +53,7 @@ async function handleGalacticHeistAlert({event,context}: Inputs): Promise<void> 
   });
 
   // create heist entity
-  const heistId = generateHeistId(to, from, transaction.hash);
+  const heistId = generateHeistId(to, from, log.transactionHash);
   await HeistEntity.create({
     id: heistId,
     data: {
@@ -62,7 +62,7 @@ async function handleGalacticHeistAlert({event,context}: Inputs): Promise<void> 
       amount: amount,
       blocknumber: block.number,
       timestamp: block.timestamp,
-      transactionHash: transaction.hash,
+      transactionHash: log.transactionHash,
     }
   });
 }

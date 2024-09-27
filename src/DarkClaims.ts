@@ -42,7 +42,7 @@ async function handleClaimed({event,context}: Inputs): Promise<void> {
       userId: userId,
       blocknumber: block.number,
       timestamp: block.timestamp,
-      transactionHash: transaction.hash,
+      transactionHash: log.transactionHash,
       amount: amount
     }
   });

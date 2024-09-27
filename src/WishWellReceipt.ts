@@ -43,7 +43,7 @@ async function handleWishWellReceiptTransfer({event,context}: Inputs): Promise<v
       tokenId: id,
       blocknumber: block.number,
       timestamp: block.timestamp,
-      transactionHash: transaction.hash
+      transactionHash: log.transactionHash
     }
   });
 }

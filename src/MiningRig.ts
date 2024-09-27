@@ -46,7 +46,7 @@ async function handleMined({event,context}: Inputs): Promise<void> {
       userId: userId,
       blocknumber: event.block.number,
       timestamp: event.block.timestamp,
-      transactionHash: event.transaction.hash,
+      transactionHash: log.transactionHash,
       amount,
       tokenInvested,
       token,
