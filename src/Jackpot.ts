@@ -2,9 +2,7 @@ import { ponder } from "@/generated";
 import { Inputs } from "./types";
 import { generateFuelCellId } from "./utils/idGenerator";
 
-ponder.on("Jackpot:AdminChanged", async ({ event, context }) => {
-  // console.log(event.args);
-});
+ponder.on("Jackpot:LotterResultAnnounced", handleLotterResultAnnounced);
 
 ponder.on("Jackpot:WinningPruned", handleWinningPruned);
 
