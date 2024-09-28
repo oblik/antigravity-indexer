@@ -13,6 +13,7 @@ import { JourneyPhaseManagerAbi } from "./abis/JourneyPhaseManagerAbi";
 import { EvilAddressAbi } from "./abis/EvilAddressAbi";
 import { TreasuryAbi } from "./abis/TreasuryAbi";
 import { JackpotAbi } from "./abis/JackpotAbi";
+import { pulsechain, pulsechainV4 } from "viem/chains";
 
 const MINING_RIG_ADDRESS=process.env.MINING_RIG_ADDRESS as string;
 const DARKX_ADDRESS=process.env.DARKX_ADDRESS as string;
@@ -38,6 +39,14 @@ export default createConfig({
     baseSepolia: {
       chainId: 84532,
       transport: http(process.env.PONDER_BASE_SEPOLIA_URL)
+    },
+    pulsechain: {
+      chainId: pulsechain.id,
+      transport: http(process.env.PONDER_PULSECHAIN_URL)
+    },
+    pulsechainV4: {
+      chainId: pulsechainV4.id,
+      transport: http(process.env.PONDER_PULSECHAIN_V4_URL)
     }
   },
   blocks: {
