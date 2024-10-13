@@ -34,8 +34,8 @@ export function generateFuelCellContractId(contractAddress: string): string {
     return contractAddress;
 }
 
-export function generateTransferId(transactionHash: string, tokenId: bigint): string {
-    return transactionHash.concat(tokenId.toString());
+export function generateTransferId(transactionHash: string, logId: string, tokenId: bigint): string {
+    return transactionHash.concat(logId).concat(tokenId.toString());
 }
 
 export function generateApprovalId(transactionHash: string, tokenId: bigint): string {

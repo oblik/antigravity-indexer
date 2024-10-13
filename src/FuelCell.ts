@@ -191,7 +191,7 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
   let newOwnerId = generateUserId(to);
   let previousOwnerId = generateUserId(from);
   let fuelCellId = generateFuelCellId(contracts.FuelCell.address, tokenId);
-  let transferId = generateTransferId(log.transactionHash, tokenId);
+  let transferId = generateTransferId(log.transactionHash, log.id, tokenId);
 
   // create or update user to deduct the fuel cell transfer
   await UserEntity.upsert({
