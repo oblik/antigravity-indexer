@@ -164,7 +164,7 @@ async function handleMintFuelCells({event,context}: Inputs): Promise<void> {
     data: Array.from({length: parseInt(quantity.toString())}, (_, i) => {
       const fuelCellTokenId = startTokenId + BigInt(i);
       return {
-        id: generateTransferId( log.transactionHash, fuelCellTokenId),
+        id: generateTransferId( log.transactionHash, log.id, fuelCellTokenId),
         tokenId: generateFuelCellId(contracts.FuelCell.address, fuelCellTokenId),
         fromId: previousOwnerId,
         toId: newOwnerId,
