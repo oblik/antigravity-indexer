@@ -68,7 +68,7 @@ async function handleFuelCellUnwrapped({event,context}: Inputs): Promise<void> {
     FuelCellContract: FuelCellContractEntity
   } = db;
 
-  const {fuelCellId} = args;
+  const {fuelCellId, payout} = args;
   // get params
   const fuelCellAddress = contracts.FuelCell.address;
   const jpmAddress = contracts.JourneyPhaseManager.address;
@@ -78,15 +78,12 @@ async function handleFuelCellUnwrapped({event,context}: Inputs): Promise<void> {
   const jpmId = generateJPMId(jpmAddress);
   const treasuryId = generateTreasuryId(contracts.Treasury.address);
 
-  // get data from blockchain
-  let totalYieldClaimed;
-
   // update Treasury
   await TreasuryEntity.update({
     id: treasuryId,
-    data: {
-      totalYieldClaimed: totalYieldClaimed
-    }
+    data: ({current}) => ({
+      totalYieldClaimed: current.totalYieldClaimed + payout
+    })
   });
 
   // update JPM
