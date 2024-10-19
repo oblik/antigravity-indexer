@@ -115,7 +115,7 @@ async function handleMintFuelCells({event,context}: Inputs): Promise<void> {
   });
 
   // create Mint entity
-  let mintId = generateMintId(log.transactionHash, to);
+  let mintId = generateMintId(log.transactionHash, log.id, to);
   await MintEntity.create({
     id: mintId,
     data: {

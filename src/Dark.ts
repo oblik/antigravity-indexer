@@ -147,7 +147,7 @@ async function handleTransfer({event,context}: Inputs): Promise<void> {
   });
   
   // create transfer entity
-  const transferId = generateDarkTransferEntityId(to, from, log.transactionHash);
+  const transferId = generateDarkTransferEntityId(to, from, log.transactionHash, log.id);
   await DarkTransferEntity.create({
     id: transferId,
     data: {

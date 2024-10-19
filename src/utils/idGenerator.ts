@@ -18,12 +18,12 @@ export function generateWishWellId(address: string, tokenId: bigint): string {
     return address.concat(tokenId.toString());
 }
 
-export function generateHeistId(mastermind: string, victim: string, transactionHash: string): string {
-    return mastermind.concat(victim).concat(transactionHash);
+export function generateHeistId(mastermind: string, victim: string, transactionHash: string, logId: string): string {
+    return mastermind.concat(victim).concat(transactionHash).concat(logId);
 }
 
-export function generateDarkTransferEntityId(to: string, from: string, transactionHash: string): string {
-    return to.concat(from).concat(transactionHash);
+export function generateDarkTransferEntityId(to: string, from: string, transactionHash: string, logId: string): string {
+    return to.concat(from).concat(transactionHash).concat(logId);
 }
 
 export function generateFuelCellId(contractAddress: string, tokenId: bigint): string {
@@ -38,16 +38,16 @@ export function generateTransferId(transactionHash: string, logId: string, token
     return transactionHash.concat(logId).concat(tokenId.toString());
 }
 
-export function generateApprovalId(transactionHash: string, tokenId: bigint): string {
-    return transactionHash.concat(tokenId.toString());
+export function generateApprovalId(transactionHash: string, logId: string, tokenId: bigint): string {
+    return transactionHash.concat(logId).concat(tokenId.toString());
 }
 
-export function generateApprovalForAllId(transactionHash: string, tokenId: bigint): string {
-    return transactionHash.concat(tokenId.toString());
+export function generateApprovalForAllId(transactionHash: string, logId: string, tokenId: bigint): string {
+    return transactionHash.concat(logId).concat(tokenId.toString());
 }
 
-export function generateMintId(transactionHash: string, user: string): string {
-    return transactionHash.concat(user);
+export function generateMintId(transactionHash: string, logId: string, user: string): string {
+    return transactionHash.concat(logId).concat(user);
 }
 
 export function generateJPMId(address: string): string {
